@@ -17,7 +17,7 @@ provider "aws" {
 
 provider "databricks" {
   alias         = "mws"
-  host          = var.databricks_host
+  host          = var.databricks_account_host
   account_id    = var.databricks_account_id
   client_id     = var.dbx_client_id
   client_secret = var.dbx_client_secret

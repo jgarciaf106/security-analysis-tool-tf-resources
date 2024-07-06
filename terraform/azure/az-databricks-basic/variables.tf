@@ -35,6 +35,7 @@ variable "shared_resource_group_name" {
 }
 
 variable "metastore_owner" {
+  default = "sat_deploy_testing_group"
   type = string
 }
 

@@ -3,7 +3,7 @@ variable "prefix" {
   description = "Prefix for resources"
   default     = "sat-aws-lab"
 }
-variable "databricks_host" {
+variable "databricks_account_host" {
   type        = string
   description = "Databricks Host"
 }

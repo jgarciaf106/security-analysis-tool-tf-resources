@@ -13,7 +13,7 @@ INIT_VARS=(
 )
 VAR_ARGS=(
     -var="databricks_account_id=$DATABRICKS_ACCOUNT_ID"
-    -var="databricks_host=$DATABRICKS_HOST"
+    -var="databricks_account_host=$DATABRICKS_ACCOUNT_HOST"
     -var="dbx_client_id=$DATABRICKS_SP_CLIENT_ID"
     -var="dbx_client_secret=$DATABRICKS_SP_CLIENT_SECRET"
     -var="aws_account_id=$AWS_ACCOUNT_ID"
