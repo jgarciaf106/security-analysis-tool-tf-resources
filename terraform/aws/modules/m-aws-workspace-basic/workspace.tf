@@ -19,9 +19,9 @@ resource "databricks_mws_credentials" "this" {
   depends_on       = [time_sleep.wait]
 }
 
-## Adding 20 second timer to avoid Failed credential validation check
+## Adding 25 second timer to avoid Failed credential validation check
 resource "time_sleep" "wait" {
-  create_duration = "20s"
+  create_duration = "26s"
   depends_on = [
     aws_iam_role_policy.this
   ]
