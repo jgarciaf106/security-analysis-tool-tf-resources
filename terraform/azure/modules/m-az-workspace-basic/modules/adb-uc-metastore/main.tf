@@ -12,6 +12,11 @@ data "azurerm_resource_group" "this" {
   name  = var.use_existing_resource_group
 }
 
+#get the service principal data
+data "databricks_service_principal" "metastore_admin" {
+  application_id = "5f8b92e4-2340-4e10-9ddb-3a861bbce721"  # Replace with your service principal's application ID
+}
+
 locals {
   rg_name     = var.use_existing_resource_group == null ? azurerm_resource_group.this[0].name : data.azurerm_resource_group.this[0].name
   rg_id       = var.use_existing_resource_group == null ? azurerm_resource_group.this[0].id : data.azurerm_resource_group.this[0].id
@@ -66,7 +71,8 @@ resource "databricks_metastore" "databricks-metastore" {
   storage_root = format("abfss://%s@%s.dfs.core.windows.net/",
     azurerm_storage_container.unity_catalog.name,
   azurerm_storage_account.unity_catalog.name)
-  owner = var.metastore_owner
+  owner = data.databricks_service_principal.metastore_admin.external_id
+  #owner = var.metastore_owner
   force_destroy = true
 }
 
