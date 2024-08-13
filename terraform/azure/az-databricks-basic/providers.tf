@@ -13,8 +13,11 @@ provider "azurerm" {
   features {}
 
   
-
-  skip_provider_registration = true
+  client_id       = var.client_id
+  client_secret   = var.client_secret
+  tenant_id       = var.tenant_id
+  subscription_id = var.subscription_id
+  #skip_provider_registration = true
 }
 
 provider "databricks" {
@@ -28,6 +31,6 @@ provider "databricks" {
   alias               = "mws"
   host                = "https://accounts.azuredatabricks.net"
   account_id          = var.account_id
+  client_id     = var.dbx_client_id
+  client_secret = var.dbx_client_secret
 }
-
-

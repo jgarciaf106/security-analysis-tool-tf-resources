@@ -54,9 +54,6 @@ variable "metastore_storage_name" {
   type        = string
   description = "Name of the storage account for Unity Catalog metastore"
 }
-variable "metastore_owner" {
-  type = string
-}
 
 variable "access_connector_name" {
   type        = string
