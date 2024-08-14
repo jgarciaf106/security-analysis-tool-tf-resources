@@ -72,7 +72,6 @@ resource "databricks_metastore" "databricks-metastore" {
     azurerm_storage_container.unity_catalog.name,
   azurerm_storage_account.unity_catalog.name)
   owner = data.databricks_service_principal.metastore_admin.external_id
-  #owner = var.metastore_owner
   force_destroy = true
 }
 

@@ -6,12 +6,6 @@ variable "location" {
   description = "(Required) The location for the resources in this module"
 }
 
-# variable "azure_backend_key" {
-#   type        = string
-#   description = "Key for accesing the Azure backend"
-# }
-
-
 variable "client_id" {
   type        = string
   description = "Client Id for the service principal"
@@ -68,11 +62,6 @@ variable "shared_resource_group_name" {
   type        = string
   description = "Name of the shared resource group"
 }
-
-#variable "metastore_owner" {
-  #default = "sat_deploy_testing_group"
-  #type = string
-#}
 
 variable "admin_user" {
   type        = string
