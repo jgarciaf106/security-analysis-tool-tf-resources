@@ -22,7 +22,6 @@ module "adb_workspace_basic" {
   }
 
   # metastore variables
-  #metastore_owner        = var.metastore_owner
   metastore_storage_name = replace("${var.prefix}-mss", "-", "")
   metastore_name         = "${var.prefix}-metastore"
   access_connector_name  = "${var.prefix}-access-connector"
